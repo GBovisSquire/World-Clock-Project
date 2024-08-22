@@ -4,7 +4,7 @@ function updateTime() {
   if (laElement) {
     let laDateElement = laElement.querySelector(".date");
     let laTimeElement = laElement.querySelector(".time");
-    let laCurrentDateAndTime = moment();
+    let laCurrentDateAndTime = moment().tz("America/Los_Angeles");
 
     laDateElement.innerHTML = laCurrentDateAndTime.format("MMMM Do YYYY");
 
@@ -13,15 +13,27 @@ function updateTime() {
     );
   }
 
-  //PARIS
-  let parisElement = document.querySelector("#paris");
-  if (parisElement) {
-    let parisDateElement = parisElement.querySelector(".date");
-    let parisTimeElement = parisElement.querySelector(".time");
-    let parisCurrentDateAndTime = moment();
+  //fiji
+  let fijiElement = document.querySelector("#fiji");
+  if (fijiElement) {
+    let fijiDateElement = fijiElement.querySelector(".date");
+    let fijiTimeElement = fijiElement.querySelector(".time");
+    let fijiCurrentDateAndTime = moment().tz("Pacific/Fiji");
 
-    parisDateElement.innerHTML = parisCurrentDateAndTime.format("MMMM Do YYYY");
-    parisTimeElement.innerHTML = parisCurrentDateAndTime.format(
+    fijiDateElement.innerHTML = fijiCurrentDateAndTime.format("MMMM Do YYYY");
+    fijiTimeElement.innerHTML = fijiCurrentDateAndTime.format(
+      "h:mm:ss[<small>]A[</small>]"
+    );
+  }
+  //Sydney
+  let sydneyElement = document.querySelector("#sydney");
+  if (sydneyElement) {
+    let sydneyDateElement = sydneyElement.querySelector(".date");
+    let sydneyTimeElement = sydneyElement.querySelector(".time");
+    let sydneyCurrentDateAndTime = moment().tz("Australia/Sydney");
+    sydneyDateElement.innerHTML =
+      sydneyCurrentDateAndTime.format("MMMM Do YYYY");
+    sydneyTimeElement.innerHTML = sydneyCurrentDateAndTime.format(
       "h:mm:ss[<small>]A[</small>]"
     );
   }
